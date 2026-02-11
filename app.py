@@ -17,6 +17,17 @@ st.set_page_config(page_title="ML Classification App", layout="centered")
 
 st.title("Machine Learning Classification Evaluation App")
 
+st.subheader("Download Sample Test Data")
+
+# Open file in binary mode
+with open("data/UCI_Credit_CardTest.csv", "rb") as file:
+    st.download_button(
+        label="Download Test CSV",
+        data=file,
+        file_name="test_data.csv",
+        mime="text/csv"
+    )
+
 TARGET_COL = "default.payment.next.month"
 
 # ----------------------------
